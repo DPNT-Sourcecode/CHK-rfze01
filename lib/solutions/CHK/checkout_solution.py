@@ -119,6 +119,3 @@ def checkout(skus):
     return cost
 
 
-
-
-
