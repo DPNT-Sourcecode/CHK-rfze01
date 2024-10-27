@@ -9,22 +9,28 @@ def checkout(skus):
     for sku, count in products.items():
         if sku not in ["A", "B", "C", "D", "E"]:
             return -1
-        else:
-            if sku == "A":
-                cost += (count // 5) * 200
-                newcount = count % 5
-                cost += (newcount // 3) * 130
-                cost += (newcount % 3) * 50
-            elif sku == "B":
-                cost += (count // 2) * 45
-                cost += (count % 2) * 30
-            elif sku == "C":
-                cost += count * 20
-            elif sku == "D":
-                cost += count * 15
-            elif sku == "E":
-                cost += count * 40
+
+
+    count = products["A"]
+    cost += (count // 5) * 200
+    newcount = count % 5
+    cost += (newcount // 3) * 130
+    cost += (newcount % 3) * 50
+
+    count = products["B"]
+    cost += (count // 2) * 45
+    cost += (count % 2) * 30
+
+    count = products["C"]
+    cost += count * 20
+
+    count = products["D"]
+    cost += count * 15
+
+    count = products["E"]
+    cost += count * 40
     return cost
+
 
 
 
