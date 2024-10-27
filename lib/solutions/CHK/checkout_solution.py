@@ -17,5 +17,11 @@ def checkout(skus):
                 cost += (count // 2) * 45
                 cost += (count % 2) * 30
             elif sku == "C":
-                
+                cost += count * 20
+            elif sku == "D":
+                cost += count * 15
+    return cost
+
+
+
 
