@@ -3,6 +3,8 @@ from collections import Counter
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
+
+    combo_offer = []
     products = sorted([i.strip(" ") for i in skus])
     products = Counter(products)
     cost = 0
@@ -111,6 +113,7 @@ def checkout(skus):
 
 
     return cost
+
 
 
 
