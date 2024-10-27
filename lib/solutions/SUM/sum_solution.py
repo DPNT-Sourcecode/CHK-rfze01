@@ -7,5 +7,3 @@ def compute(x, y):
             return x + y
     else:
         raise ValueError("Input params are integers")
-
-
