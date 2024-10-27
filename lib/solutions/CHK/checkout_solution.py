@@ -7,14 +7,14 @@ def checkout(skus):
     products = Counter(products)
     cost = 0
     for sku, count in products.items():
-        if sku not in ["A", "B", "C", "D"]:
+        if sku not in ["A", "B", "C", "D", "E"]:
             return -1
         else:
             if sku == "A":
                 cost += (count // 5) * 200
                 newcount = count % 5
                 cost += (newcount // 3) * 130
-                cost += (newcount % 3) * 40
+                cost += (newcount % 3) * 50
             elif sku == "B":
                 cost += (count // 2) * 45
                 cost += (count % 2) * 30
@@ -25,5 +25,6 @@ def checkout(skus):
             elif sku == "E":
                 cost += count * 40
     return cost
+
 
 
