@@ -4,7 +4,7 @@ from collections import Counter
 # skus = unicode string
 def checkout(skus):
 
-    combo_offer = ["X", "Z", "S", "T", "Y"]
+    combo_offer = ["Z", "S", "T", "Y", "X"]
 
     products = sorted([i.strip(" ") for i in skus])
     products = Counter(products)
@@ -14,7 +14,18 @@ def checkout(skus):
             return -1
 
     combo_count = products["X"] + products["T"] + products["S"] + products["Z"] + products["Y"]
-    combo_packs = combo_count//
+    combo_packs = combo_count // 3
+    item_reduce = combo_packs * 3
+    cost = combo_packs * 45
+
+    for i in combo_offer:
+        if item_reduce == 0:
+            break
+        else:
+            substract = min(products[i], item_reduce)
+            products[i] = products[i] - substract
+            item_reduce -= substract
+
 
     count = products["E"]
     cost += count * 40
@@ -62,8 +73,8 @@ def checkout(skus):
     cost += (count % 2) * 30
 
     count = products["K"]
-    cost += (count // 2) * 150
-    cost += (count % 2) * 80
+    cost += (count // 2) * 120
+    cost += (count % 2) * 70
 
     count = products["P"]
     cost += (count // 5) * 200
@@ -98,7 +109,7 @@ def checkout(skus):
     cost += count * 10
 
     count = products["S"]
-    cost += count * 30
+    cost += count * 20
 
     count = products["T"]
     cost += count * 20
@@ -107,15 +118,16 @@ def checkout(skus):
     cost += count * 20
 
     count = products["X"]
-    cost += count * 90
+    cost += count * 17
 
     count = products["Y"]
-    cost += count * 10
+    cost += count * 20
 
     count = products["Z"]
-    cost += count * 50
+    cost += count * 21
 
 
     return cost
+
 
 
