@@ -7,7 +7,7 @@ def checkout(skus):
     products = Counter(products)
     cost = 0
     for sku, count in products.items():
-        if sku not in ["A", "B", "C", "D", "E"]:
+        if sku not in ["A", "B", "C", "D", "E", "F"]:
             return -1
 
 
@@ -40,6 +40,7 @@ def checkout(skus):
     return cost
 
 checkout('EEB')
+
 
 
 
