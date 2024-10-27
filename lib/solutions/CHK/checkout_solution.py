@@ -42,5 +42,3 @@ def checkout(skus):
 checkout('EEB')
 
 
-
-
