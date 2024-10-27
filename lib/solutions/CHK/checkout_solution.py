@@ -4,13 +4,17 @@ from collections import Counter
 # skus = unicode string
 def checkout(skus):
 
-    combo_offer = []
+    combo_offer = ["X", "Z", "S", "T", "Y"]
+
     products = sorted([i.strip(" ") for i in skus])
     products = Counter(products)
     cost = 0
     for sku, count in products.items():
         if sku not in ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']:
             return -1
+
+    combo_count = products["X"] + products["T"] + products["S"] + products["Z"] + products["Y"]
+    combo_packs = combo_count//
 
     count = products["E"]
     cost += count * 40
@@ -113,6 +117,7 @@ def checkout(skus):
 
 
     return cost
+
 
 
 
