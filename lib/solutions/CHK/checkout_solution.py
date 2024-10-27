@@ -17,6 +17,11 @@ def checkout(skus):
     cost += (newcount // 3) * 130
     cost += (newcount % 3) * 50
 
+    count = products["E"]
+    cost += count * 40
+    if products['B'] > 0:
+        products['B'] = max(0, products['B'] - (count//2))
+
     count = products["B"]
     cost += (count // 2) * 45
     cost += (count % 2) * 30
@@ -27,9 +32,11 @@ def checkout(skus):
     count = products["D"]
     cost += count * 15
 
-    count = products["E"]
-    cost += count * 40
+
     return cost
+
+checkout('EEB')
+
 
 
 
